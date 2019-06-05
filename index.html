@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="css.css">
+    <title>Currency rate</title>
+    <meta name="author" content="Viktoras Vorobjovas">
+</head>
+
+<body>
+    <header>
+        <div class="container">
+
+            <div class="row">
+                <div class="col">
+                    <p id="title"> Valiutų kursai</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <div id="rootImg"></div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main>
+        <div class="container">
+
+            <div class="row justify-content-center">
+                <div class="col-sm-12 col-md-4 cal-lg-4">
+                    <p></p>
+                    <input type="button" class="btn btn-primary" value="Valiutų kursai nurodytai datai" id="show">
+                </div>
+                <div class="col-sm-12 col-md-4 cal-lg-4">
+                    <p></p>
+                    <input type="button" class="btn btn-warning" value="Valiutų kursai nurodytam intervalui" id="show2">
+                </div>
+            </div>
+            <p></p>
+            <div class="row">
+                <div class="col">
+                    <div id="form11">
+                        <div class="card w-50">
+                            <div class="card-body">
+                                <form id="form1">
+                                    <div class="form-group">
+                                        <div class="row">
+                                            <div class="col">
+
+                                                <label for="date">Įveskite datą:</label>
+                                                <input type="date" id="date" min="2014-09-30" class="form-control" name="date" onchange=checkSubmit() required>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <p></p>
+                                        <div class="row">
+                                            <div class="col">
+
+                                                <div class="progress" style="height: 25px;">
+                                                    <div id="progressBar1" class="progress-bar bg-success" role="progressbar" style="width: 0%" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100"></div>
+                                                </div>
+
+                                                <label for="selectedCurrency">Pasirinkite valiutos kodą:</label>
+                                                <select name="selectedCurrencyCode" class="form-control" id="selectedCurrency" required>
+                                                    <option disabled selected value>-Pirma įveskite datą.-</option>
+
+                                                </select>
+
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col">
+                                                <p></p>
+                                                <button type="submit" class="btn btn-success" id="submit">Ieškoti</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                    <div id="form22">
+                        <div class="card w-50">
+                            <div class="card-body">
+                                <form id="form2">
+                                    <div class="form-group">
+                                        <div class="row">
+                                            <div class="col">
+
+                                                <label for="date1">Įveskite pirmo intervalo datą:</label>
+                                                <input type="date" id="date1" min="2014-09-30" class="form-control" name="date" onchange=checkSubmit2() required>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col">
+                                                <div class="progress" style="height: 14px;">
+                                                    <div id="progressBar2" class="progress-bar bg-info" role="progressbar" style="width: 0%" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <p></p>
+                                    <div class="row">
+                                        <div class="col">
+                                            <label for="date2">Įveskite antro Intervalo datą:</label>
+                                            <input type="date" id="date2" min="2014-09-30" class="form-control" name="date" onchange=checkSubmit3() required>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col">
+                                            <div class="progress" style="height: 14px;">
+                                                <div id="progressBar3" class="progress-bar bar-warning" role="progressbar" style="width: 0%" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!--                                <div class="form-group">-->
+                                    <p></p>
+                                    <div class="row">
+                                        <div class="col">
+
+                                            <div class="progress" style="height: 25px;">
+                                                <div id="progressBar4" class="progress-bar bg-success" role="progressbar" style="width: 0%" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100"></div>
+                                            </div>
+
+                                            <label for="selectedCurrency2">Pasirinkite valiutos kodą:</label>
+                                            <select name="selectedCurrencyCode" class="form-control" id="selectedCurrency2" required>
+                                                <option disabled selected value>Pirma įveskite intervalą.-</option>
+
+                                            </select>
+
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col">
+                                            <p></p>
+                                            <button type="submit2" class="btn btn-success" id="submit2">Ieškoti</button>
+                                        </div>
+                                    </div>
+                                    <!--                                </div>-->
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="row">
+                <div class="col-sm-12 col-md-6 col-ld-6">
+                    <p></p>
+                    <p id="inputeDate1"></p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+
+                    <p id="inputeResult"></p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <p id="inputeResultCurrency"></p>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer>
+
+        <p class="text-center"> &copy Viktoras Vorobjovas</p>
+        <p class="text-center" id="year"></p>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="JS/xml2json.js"></script>
+    <script type="text/javascript" src="JS/json2xml"></script>
+    <script type="text/jscript" src="JS/jsForOneDate.js"></script>
+    <script type="text/javascript" src="JS/jsForInterval.js"></script>
+
+</body>
+
+</html>
