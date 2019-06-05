@@ -20,7 +20,7 @@ Panaudojau LB Užsienio valiutų santykiai nurodytai dienai - getFxRates užklau
 Programą galima paleisti per web naršyklę.
 
 ## Panaudotos technologijos
-JavaScript, Bootstrap, CS, XML, HTML.
+JavaScript, Bootstrap, CSS, XML, HTML.
 
 ### Pilnas kodas:
 
