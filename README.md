@@ -24,4 +24,4 @@ JavaScript, Bootstrap, CS, XML, HTML.
 
 ### Pilnas kodas:
 
-Programos kodas su reikiamomis bibliotekomis: https://ufile.io/g1f2q6q6.
+Programos kodas su reikiamomis bibliotekomis: https://ufile.io/lhdwinu1.
