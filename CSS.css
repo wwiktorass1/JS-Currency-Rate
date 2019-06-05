@@ -1,0 +1,21 @@
+body {background-color: wheat;
+}
+
+
+#form11{
+  padding:10px;
+  display:none;
+}
+#form22{
+  padding:10px;
+  display:none;
+}
+
+#title{
+  text-align: center;
+font-weight: bold;
+}
+
+#rootImg{
+   text-align: center;
+}
